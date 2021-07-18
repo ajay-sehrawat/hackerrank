@@ -44,6 +44,7 @@ int main()
     }
 
     //printing the encryption
+    //Here we are iterating from clumns to rows first print the column[0] with all rows not the traditional way
     for (int i = 0; i < x_ceil; i++)
     {
         for (int j = 0; j < x_floor; j++)
