@@ -31,13 +31,11 @@ int main()
     int bottomLeft = min(bottom , left);
 
     //now for obstacles
-    int pawnX,pawnY;
+    int pawnX,pawnY, j = 0;
     for ( int i = 0; i < k; i++ )
     {
-        for ( int j = 0; j < 2; j++ )
-        {
-            
-            
+        pawnY = obstacle[i][j];
+        pawnX = obstacle[i][++j];
             //top
             if ( (pawnX == queenX) && (pawnY < queenY) )
             top = min(top, queenY - pawnY - 1);
@@ -69,9 +67,9 @@ int main()
             //bottomleft
             if( (pawnX < queenX) && (pawnY > queenY) && (queenX - pawnX) == (pawnY -queenY))
             bottomLeft = min(bottomLeft, queenX - pawnX - 1);
-        }
+            
+            j = 0;
     }
-    
     //Output
     cout<<(top + right + bottom + left + topLeft + topRight + bottomRight + bottomLeft);
 }
